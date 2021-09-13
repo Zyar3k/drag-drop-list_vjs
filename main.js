@@ -24,12 +24,17 @@ createList();
 // inster list items to DOM
 
 function createList() {
-  [...biggestCities].forEach((city, index) => {
-    const listItem = document.createElement("li");
+  [...biggestCities]
+    .map((a) => ({ value: a, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((a) => a.value)
+    .forEach((city, index) => {
+      console.log(city);
+      const listItem = document.createElement("li");
 
-    listItem.setAttribute("data-index", index);
+      listItem.setAttribute("data-index", index);
 
-    listItem.innerHTML = `
+      listItem.innerHTML = `
       <span class='number'>${index + 1}</span>
       <div class='draggable' draggable='true'>
         <p class='city-name'>${city}</p>
@@ -37,8 +42,8 @@ function createList() {
       </div>
     `;
 
-    listItems.push(listItem);
+      listItems.push(listItem);
 
-    draggable_list.appendChild(listItem);
-  });
+      draggable_list.appendChild(listItem);
+    });
 }
