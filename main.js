@@ -7,10 +7,10 @@ const biggestCities = [
   "Shanghai",
   "Sao Paulo",
   "Mexico City",
-  "Cairo",
   "Dhaka",
-  "Mumbai",
+  "Cairo",
   "Beijing",
+  "Mumbai",
   "Osaka"
 ];
 
